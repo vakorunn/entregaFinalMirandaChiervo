@@ -2,6 +2,7 @@ import "./Navbar.css"
 
 import { Link, NavLink } from "react-router-dom"
 import TituloPrincipal from "../TituloPrincipal/TituloPrincipal"
+import CartWidget from '../CartWidget/CartWidget'
 
 const Navbar = () => {
   return (
@@ -22,7 +23,7 @@ const Navbar = () => {
                 </li>
             </ul>
         </nav>
-        
+        <CartWidget />
     </header>
   )
 }

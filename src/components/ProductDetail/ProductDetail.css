@@ -1,0 +1,9 @@
+.product-container {
+    text-align: center;
+    align-items: center;
+    margin: 1.4rem;
+}
+
+img {
+    width: 30vw;
+}
