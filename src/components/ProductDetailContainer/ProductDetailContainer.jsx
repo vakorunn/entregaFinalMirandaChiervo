@@ -1,8 +1,9 @@
+import React from "react";
+import ProductDetail from '../ProductDetail/ProductDetail'
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { getDoc, doc} from 'firebase/firestore'
 import { db } from '../../services/Config'
-import ProductDetail from '../ProductDetail/ProductDetail'
 
 const ProductDetailContainer = () => {
     const [product, setProduct] = useState(null)
