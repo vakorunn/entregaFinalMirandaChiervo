@@ -1,9 +1,10 @@
-import React from "react";
 import ProductDetail from '../ProductDetail/ProductDetail'
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getDoc, doc} from 'firebase/firestore'
+import { getDoc, doc } from 'firebase/firestore'
 import { db } from '../../services/Config'
+
+import React from 'react'
 
 const ProductDetailContainer = () => {
     const [product, setProduct] = useState(null)
@@ -15,16 +16,17 @@ const ProductDetailContainer = () => {
         getDoc(newDoc)
             .then(res => {
                 const data = res.data()
-                const newProduct = {id:res.id, ...data}
+                const newProduct = { id: res.id, ...data }
                 setProduct(newProduct)
             })
-    },[idItem])
+    }, [idItem])
 }
-
 return (
     <div>
-        <ProductDetail {...product}/>
+        <ProductDetail {...product} />
     </div>
 )
 
+
 export default ProductDetailContainer
+

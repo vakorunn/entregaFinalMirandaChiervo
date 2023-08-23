@@ -12,7 +12,7 @@ const App = () => {
   return (
     <>
     
-      {/* <BrowserRouter>
+      <BrowserRouter>
         <CarritoProvider>
           <Navbar>
             <Routes>
@@ -24,7 +24,7 @@ const App = () => {
             </Routes>
           </Navbar>
         </CarritoProvider>
-      </BrowserRouter> */}
+      </BrowserRouter>
     </>
   )
 }
