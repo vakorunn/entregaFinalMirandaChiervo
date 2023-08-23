@@ -11,7 +11,8 @@ const App = () => {
   document.title = 'Belleza Oculta'
   return (
     <>
-      <BrowserRouter>
+    
+      {/* <BrowserRouter>
         <CarritoProvider>
           <Navbar>
             <Routes>
@@ -23,7 +24,7 @@ const App = () => {
             </Routes>
           </Navbar>
         </CarritoProvider>
-      </BrowserRouter>
+      </BrowserRouter> */}
     </>
   )
 }
