@@ -2,6 +2,8 @@ import React from 'react'
 
 import { NavLink } from 'react-router-dom'
 
+import CartWidget from '../CartWidget/CartWidget'
+
 const Navbar = () => {
   return (
     <>
@@ -16,21 +18,15 @@ const Navbar = () => {
               <li className="nav-item">
                 <NavLink to={'/'} className={'nav-link'} aria-current='page'>Inico</NavLink>
               </li>
-              <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Categorias
-                </a>
-                <ul className="dropdown-menu">
-                  <li>
-                    <NavLink className={'dropdown-item'} to={'/categoria'}>Camisas</NavLink>
-                  </li>
-                  <li>
-                    <NavLink className={'dropdown-item'} to={'/categoria'}>Calzado</NavLink>
-                  </li>
-                </ul>
+              <li className='nav-item'>
+                <NavLink className={'nav-link'} to={'/categoria/1'}>Camisas</NavLink>
+              </li>
+              <li className='nav-item'>
+                <NavLink className={'nav-link'} to={'/categoria/2'}>Calzado</NavLink>
               </li>
             </ul>
           </div>
+          <CartWidget />
         </div>
       </nav>
     </>

@@ -1,6 +1,6 @@
 import { useState, useContext } from "react"
 import { CarritoContext } from "../../context/CartContext"
-import { db } from "../../services/Config.js"
+import db from "../../services/Config.js"
 import { collection, addDoc, updateDoc, doc, getDoc } from "firebase/firestore"
 import './Checkout.css'
 
@@ -53,7 +53,7 @@ const Checkout = () => {
             })
         )
             .then(() => {
-                addDoc(collection(db,'ordenes'), orden)
+                addDoc(collection(db, 'ordenes'), orden)
                     .then((docRef) => {
                         setOrdenId(docRef.id)
                         vaciarCarrito()

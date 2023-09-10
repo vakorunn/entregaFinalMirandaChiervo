@@ -5,7 +5,7 @@ import ProductCart from '../ProductCart/ProductCart'
 
 const Cart = () => {
     const { carrito, vaciarCarrito, total, cantidadTotal } = useContext(CarritoContext)
-    
+
     if (cantidadTotal === 0) {
         return (
             <>
@@ -15,7 +15,7 @@ const Cart = () => {
         )
     } else {
         <div>
-            {carrito.map(producto => <ProductCart key={producto.id} {...producto}/>)}
+            {carrito.map(producto => <ProductCart key={producto.id} {...producto} />)}
             <p>TOTAL:${total}</p>
             <p>Total de productos:{cantidadTotal}</p>
             <button onClick={() => vaciarCarrito()}> Vaciar Carrito </button>
