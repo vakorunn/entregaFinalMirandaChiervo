@@ -30,7 +30,7 @@ const Checkout = () => {
         const orden = {
             items: carrito.map(producto => ({
                 id: producto.item.id,
-                nombre: producto.item.nombre,
+                nombre: producto.item.productName,
                 cantidad: producto.cantidad
             })),
             total: cantidadTotal,
@@ -40,18 +40,6 @@ const Checkout = () => {
             email,
             fecha: new Date()
         }
-
-        Promise.all(
-            orden.items.map(async (productoOrden) => {
-                const productoRef = doc(db, "inventario", productoOrden.id)
-                const productoDoc = await getDoc(productoRef)
-                const stockActual = productoDoc.data().stock
-
-                await updateDoc(productoRef, {
-                    stock: stockActual - productoOrden.cantidad
-                })
-            })
-        )
             .then(() => {
                 addDoc(collection(db, 'ordenes'), orden)
                     .then((docRef) => {

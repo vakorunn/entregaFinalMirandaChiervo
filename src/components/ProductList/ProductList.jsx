@@ -3,12 +3,12 @@ import React from 'react'
 import Product from '../Product/Product'
 import './ProductList.css'
 
-const ProductList = ({products}) => {
+const ProductList = ({productos}) => {
   return (
     <>
       <div className="product-container">
         {
-          products.map(product => <Product key={product.id} {...product} />)
+          productos?.map(product => <Product key={product.id} {...product} />)
         }
       </div>
     </>

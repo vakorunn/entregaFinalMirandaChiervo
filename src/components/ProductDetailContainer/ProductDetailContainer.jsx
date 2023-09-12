@@ -6,11 +6,11 @@ import db from '../../services/Config'
 import React from 'react'
 
 const ProductDetailContainer = () => {
-    const [product, setProduct] = useState(null)
-    const { idItem } = useParams()
+    const [product, setProduct] = useState([])
+    const { idProducto } = useParams()
 
     useEffect(() => {
-        const newDoc = doc(db, 'productos', idItem)
+        const newDoc = doc(db, 'productos', idProducto)
 
         getDoc(newDoc)
             .then(res => {
@@ -18,7 +18,8 @@ const ProductDetailContainer = () => {
                 const newProduct = { id: res.id, ...data }
                 setProduct(newProduct)
             })
-    }, [idItem])
+    }, [idProducto])
+    
     return (
         <div>
             <ProductDetail {...product} />
