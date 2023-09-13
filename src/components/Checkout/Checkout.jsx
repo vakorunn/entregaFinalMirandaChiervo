@@ -39,20 +39,20 @@ const Checkout = () => {
             telefono,
             email,
             fecha: new Date()
-        }
-            .then(() => {
-                addDoc(collection(db, 'ordenes'), orden)
-                    .then((docRef) => {
-                        setOrdenId(docRef.id)
-                        vaciarCarrito()
-                    })
-                    .cath((error) => {
-                        setError(`Error creando la orden\nMotivo:${error}`)
-                    })
+        };
+
+        addDoc(collection(db, 'ordenes'), orden)
+            .then((docRef) => {
+                setOrdenId(docRef.id)
+                vaciarCarrito()
+            })
+            .catch((error) => {
+                setError(`Error creando la orden\nMotivo:${error}`)
             })
             .catch((error) => {
                 setError(`Error actualizando el error\nMotivo:${error}`)
-            })
+            });
+
     }
 
     return (

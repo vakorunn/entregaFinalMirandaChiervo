@@ -9,18 +9,23 @@ const Cart = () => {
     if (cantidadTotal === 0) {
         return (
             <>
-                <h2>El carrito se encuentra vacio</h2>
-                <Link to="/"> Volver a la tienda </Link>
+                <h2>El carrito se encuentra vacío</h2>
+                <Link to="/">Volver a la tienda</Link>
             </>
         )
     }
-    retunr (<div>
-        {carrito.map(producto => <ProductCart key={producto.id} {...producto} />)}
-        <p>TOTAL:${total}</p>
-        <p>Total de productos:{cantidadTotal}</p>
-        <button onClick={() => vaciarCarrito()}> Vaciar Carrito </button>
-        <button> <Link to="/checkout"> Finalizar Compra </Link> </button>
-    </div>)
+
+    return (
+        <div>
+            {carrito.map(producto => (
+                <ProductCart key={producto.id} {...producto} />
+            ))}
+            <p>TOTAL: ${total}</p>
+            <p>Total de productos: {cantidadTotal}</p>
+            <button onClick={() => vaciarCarrito()}>Vaciar Carrito</button>
+            <Link to="/checkout"><button>Finalizar Compra</button></Link>
+        </div>
+    )
 }
 
 export default Cart

@@ -20,9 +20,9 @@ const CountProduct = ({ inicio, stock, funcionAgregar }) => {
     return (
         <>
             <div className="count-container">
-                <button onClick={decrementar}> + </button>
+                <button onClick={decrementar}> - </button>
                 <p> {count} </p>
-                <button onClick={incrementar}> - </button>
+                <button onClick={incrementar}> + </button>
             </div>
             <button onClick={() => funcionAgregar(count)}> Añadir al Carro </button>
         </>
