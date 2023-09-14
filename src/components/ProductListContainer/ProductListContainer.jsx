@@ -11,7 +11,7 @@ const ProductListContainer = () => {
   const { idCategoria } = useParams()
 
   useEffect(() => {
-    const myProducts = idCategoria ? query(collection(db, 'productos'), where('idCategory', '==', idCategoria)) : collection(db, 'productos')
+    const myProducts = idCategoria ? query(collection(db, 'productos'), where('idCategory', '==', Number(idCategoria))) : collection(db, 'productos')
     
     getDocs(myProducts)
     .then(res => {
